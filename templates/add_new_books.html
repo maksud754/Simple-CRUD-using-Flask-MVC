@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3 style="margin-top: 1%">Add New Book/ Update Book</h3>
+ {% set stat=status %}
+  <form action='/update_book' method='post' style="background-color: #e1e3e6; margin-top: 3%">
+    <label style="font-size: 20px"><strong>ISBN:</strong><br></label>
+    {% if stat=="1": %}
+    <input type="text" name="isbn" value="{{row[0]}}" readonly><br>
+    {% else: %}
+    <input type="text" name="isbn" placeholder="Enter ISBN" value="{{row[0]}}"><br>
+    {% endif %}
+   <label style="font-size: 20px"><strong> Title:</strong> <br></label>
+    <input type="text" name="title" placeholder="Enter book title" value="{{row[1]}}"><br>
+    <label style="font-size: 20px"><strong>Year: </stront><br></label>
+    <input type="text" name="year" placeholder="Enter year" value="{{row[2]}}"><br>     
+    <label style="font-size: 20px"><strong>Author:</strong><br></label>
+    <input type="text" name="author" placeholder="Enter author name" value="{{row[3]}}" ><br>
+    <label style="font-size: 20px"><strong>Publisher: </strong><br></label>
+    <input type="text" name="publisher" placeholder="Enter publisher name" value="{{row[4]}}" ><br>
+	<label style="font-size: 20px"><strong>Publish Date:</strong> <br></strong>
+	<input type="date" name="publish_date" 
+	style="
+	  width: 100%;
+	  padding: 12px 20px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;" placeholder="Enter pubilsh date" value="{{row[5]}}"><br>
+    
+    <input type="hidden" name="status" value="{{status}}"> 
+    <br>
+    <div style="margin: 10px 0; color: red;">
+        <span>{{ message }} </span>
+    </div>
+   <p><input type=submit value=Submit style="width: 20%;
+	  background-color: #468af0;
+	  color: white;
+	  padding: 14px 20px;
+	  float: right;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer; 
+	  font-size:15px"></p>
+</form>
+
+{% endblock %}

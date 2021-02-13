@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table id="table">
+
+<tr>
+<th>Matric No</th>
+<th>Name</th>
+<th>Address</th>
+<th>Phone</th>
+<th>Delete</th>
+<th>Update</th>
+
+</tr>
+{% for row in rows %}
+ <tr>
+   <td>{{row[0]}}</td>
+   <td>{{row[1]}}</td>
+   <td>{{row[2]}}</td>
+   <td>{{row[3]}}</td>
+  
+   
+   <td><a href='/delete/{{row[0]}}'> <button type="button" class="btn btn-danger" style="background-color: red;font-size: 15px; width: 100px"><strong>Delete</strong></button> </a>
+   <td><a href='/edit/{{row[0]}}'> <button type="button" class="btn btn-success" style="background-color: green;font-size: 15px; width: 100px"><strong>Update</strong></button> </a>
+  
+
+ </tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

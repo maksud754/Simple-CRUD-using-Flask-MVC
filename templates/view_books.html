@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table id="table">
+
+<tr>
+<th>ISBN</th>
+<th>Title</th>
+<th>Year</th>
+<th>Author</th>
+<th>Publisher</th>
+<th>Publish Date</th>
+<th>Delete</th>
+
+
+</tr>
+{% for row in rows %}
+ <tr>
+   <td>{{row[0]}}</td>
+   <td>{{row[1]}}</td>
+   <td>{{row[2]}}</td>
+   <td>{{row[3]}}</td>
+   <td>{{row[4]}}</td>
+   <td>{{row[5]}}</td>
+  
+   
+   <td><a href='/delete_book/{{row[0]}}'> <button type="button" class="btn btn-danger" style="background-color: red;font-size: 15px; width: 100px"><strong>Delete</strong></button> </a>
+  
+
+ </tr>
+
+{% endfor %}
+</table>
+
+{% endblock %}

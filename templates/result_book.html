@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%if row==None: %}
+  <p style="font-size: 40px; text-align: center; color: red; margin-top: 16%">This book is not there in the list!!</p>
+{% else %}
+  <form style="background-color: #e1e3e6; margin-top: 3%">
+    <label style="font-size: 20px"><strong>ISBN:</strong><br>
+    <input type="number" name="isbn" value={{row[0]}} readonly><br>
+    <label style="font-size: 20px"><strong>Title:</strong> <br>
+    <input type="text" name="title" size=30 value={{row[1]}} readonly><br>
+	<label style="font-size: 20px"><strong>Year:</strong> <br>
+    <input type="number" name="year" value={{row[2]}} readonly> <br> 
+    <label style="font-size: 20px"><strong>Author:</strong> <br>
+    <input type="text" name="author" value={{row[3]}} readonly> <br> 
+       
+   </form>
+
+{% endif %}
+
+{% endblock %}

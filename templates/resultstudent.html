@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+{%if row==None: %}
+  <p style="font-size: 40px; text-align: center; color: red; margin-top: 16%">Student is not in the list!!</p>
+{% else %}
+  <form style="background-color: #e1e3e6; margin-top: 3%">
+    <label style="font-size: 20px"><strong>Matric No: </strong><br>
+    <input type="text" name="matricno" style="font-size: 15px" value={{row[1]}} readonly><br>
+    <label style="font-size: 20px"><strong>Name:</strong> <br>
+    <input type="text" name="name" style="font-size: 15px"value={{row[2]}} readonly><br>
+    <label style="font-size: 20px"><strong>Phone:<strong> <br>
+    <input type="text" name="phone" style="font-size: 15px" value={{row[3]}} readonly> <br>     
+       
+   </form>
+
+{% endif %}
+
+{% endblock %}

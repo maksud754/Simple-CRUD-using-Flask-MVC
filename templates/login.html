@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+</head>
+
+<body>
+{% block body %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+<form action="/login" method="POST">
+    <div class="login">
+        <div class="login-screen">
+                <h1 style="text-align: center">Login</h1>
+            
+ 
+            <div class="login-form">
+				<div class="logo">
+					<img src="../static/images/A1.png">
+				</div>
+                
+                <label for="matricno" id="label">Matric No:</label>
+                <input type="text" class="login-field" value="" placeholder="Enter Matric No" name="matricno"><br><br>
+                
+                 <label for="password" id="label">Password:</label>
+                <input type="password" class="login-field" value="" placeholder="Enter Password" name="password">
+                <br>
+				
+				
+				
+				<div style="color: red; margin-top: 20px; margin-left: 30px">
+                    <span>{{ message }} </span>
+                </div>
+				
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+                <br>
+				
+            </div>
+        </div>
+    </div>
+</form>
+ 
+{% endif %}
+{% endblock %}
+    
+</body>
+</html>

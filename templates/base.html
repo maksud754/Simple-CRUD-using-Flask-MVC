@@ -1,0 +1,67 @@
+<html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" media="screen" href = "../static/css/style.css">
+<link rel="stylesheet" media="screen" href = "../static/css/tstyle.css">
+<link rel="stylesheet" media="screen" href = "../static/css/formstyle.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<head>
+</head>
+
+<body style="background-color: white;">
+
+<div class="topnav" id="myTopnav">
+  <h2 style="color: black; margin-top: 10px; margin-bottom: -35px;">BORROW-YOUR-BOOK</h2>
+  <a href="/logout">Logout</a>
+  <a href="/borrow">Borrow-List</a>
+  <div class="dropdown">
+    <button class="dropbtn">Students
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+	  <a href="/find_student">Find Student</a>
+      <a href="/students">View Students</a>
+      <a href="/new">Add New Student</a>
+      
+    </div>
+  </div> 
+  <div class="dropdown">
+    <button class="dropbtn">Books 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+	  <a href="/find_book">Find Books</a>
+      <a href="/books">View Book List</a>
+      <a href="/new_book">Add New Books</a>
+    </div>
+  </div> 
+  
+  <a href="/">Home</a>
+  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+<div class="container">
+  {%block content%}
+  {%endblock%}
+  
+</div>
+<div>
+<footer style="background-color: #ffffff; color: black; padding: 5px 0px ; text-align: center; margin-top: 135px">
+<h4> &copy 2021 All Rights Reserved || Md Maksudur Rahman</h4>
+</footer>
+</div>
+</body>
+
+</html>
